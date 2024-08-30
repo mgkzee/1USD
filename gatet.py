@@ -33,6 +33,8 @@ def Tele(ccx):
 	    pm = r1.json()['id']
 	except:
 	    	er = r1.json()
+		else:
+    			print(er)
 
 	cookies = {
 	    '_ga': 'GA1.1.579353265.1725049342',
