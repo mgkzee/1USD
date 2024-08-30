@@ -29,14 +29,8 @@ def Tele(ccx):
 	data = f'type=card&card[number]={n}&card[cvc]={cvc}&card[exp_month]={mm}&card[exp_year]={yy}&key=pk_live_51LyZmQCt7u53epdJaN2EfBYFT5v4hC78N80dedyFRFU3EFgoSZ9SR86kgt73cn0KBXwZL6NaRAzru7W7P1nJMx7U00jJDFzwwT'
 	r1 = requests.post('https://api.stripe.com/v1/payment_methods', headers=headers, data=data)
 
-	try:
-	    pm = r1.json()['id']
-	except:
-	    	er = r1.json()
-	    	if 'error' in r1.text:
-	    		print(er)
-	    	else:
-    			print(er)
+	pm = r1.json()['id']
+	
 	cookies = {
 	    '_ga': 'GA1.1.579353265.1725049342',
 	    'twk_idm_key': 'WVE-YEp_3JtqYzZ9Niajy',
