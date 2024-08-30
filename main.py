@@ -81,7 +81,7 @@ def main(message):
 				msg = f'''{cc}
 Payment successful ✅'''
 				print(last)
-				if 'Thank you for your payment' in last:
+				if 'Thank you' in last:
 					live += 1
 					bot.reply_to(message, msg)
 				else:
