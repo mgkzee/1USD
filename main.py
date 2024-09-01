@@ -3,19 +3,19 @@ import telebot,time
 from telebot import types
 from gatet import Tele
 import os
-token = '7184391416:AAFB2C3nHc1rO7Zr308e9JOL1FCzeLSMUnQ'
+token = '7428928509:AAHbsywSZzhnbuxysucsnR_cjcRRujZBrTw'
 bot=telebot.TeleBot(token,parse_mode="HTML")
-subscriber = '1706037532'
+subscriber = '7428928509'
 @bot.message_handler(commands=["start"])
 def start(message):
-	if not str(message.chat.id) == '1706037532':
-		bot.reply_to(message, "You cannot use the bot to contact developers to purchase a bot subscription @strawhatchannel69")
+	if not str(message.chat.id) == '7428928509':
+		bot.reply_to(message, "You cannot use the bot to contact developers to purchase a bot subscription @kzee_mm")
 		return
 	bot.reply_to(message,"Send the file now")
 @bot.message_handler(content_types=["document"])
 def main(message):
-	if not str(message.chat.id) == '1706037532':
-		bot.reply_to(message, "You cannot use the bot to contact developers to purchase a bot subscription @strawhatchannel69")
+	if not str(message.chat.id) == '7428928509':
+		bot.reply_to(message, "You cannot use the bot to contact developers to purchase a bot subscription @kzee_mm")
 		return
 	dd = 0
 	live = 0
@@ -32,7 +32,7 @@ def main(message):
 				current_dir = os.getcwd()
 				for filename in os.listdir(current_dir):
 					if filename.endswith(".stop"):
-						bot.edit_message_text(chat_id=message.chat.id, message_id=ko, text='𝗦𝗧𝗢𝗣𝗣𝗘𝗗 ✅\n𝗕𝗢𝗧 𝗕𝗬 ➜ @strawhatchannel69')
+						bot.edit_message_text(chat_id=message.chat.id, message_id=ko, text='𝗦𝗧𝗢𝗣𝗣𝗘𝗗 ✅\n𝗕𝗢𝗧 𝗕𝗬 ➜ @kzee_mm')
 						os.remove('stop.stop')
 						return
 				try:
@@ -77,7 +77,7 @@ def main(message):
 				stop=types.InlineKeyboardButton(f"[ 𝐒𝐓𝐎𝐏 ]", callback_data='stop')
 				mes.add(cm1, cm3, cm4, cm5, stop)
 				bot.edit_message_text(chat_id=message.chat.id, message_id=ko, text='''Wait for processing 
-𝒃𝒚 ➜ @strawhatchannel69 ''', reply_markup=mes)
+𝒃𝒚 ➜ @kzee_mm ''', reply_markup=mes)
 				msg = f'''{cc}
 Payment successful ✅'''
 				print(last)
@@ -89,7 +89,7 @@ Payment successful ✅'''
 					time.sleep(5)
 	except Exception as e:
 		print(e)
-	bot.edit_message_text(chat_id=message.chat.id, message_id=ko, text='𝗕𝗘𝗘𝗡 𝗖𝗢𝗠𝗣𝗟𝗘𝗧𝗘𝗗 ✅\n𝗕𝗢𝗧 𝗕𝗬 ➜ @strawhatchannel69')
+	bot.edit_message_text(chat_id=message.chat.id, message_id=ko, text='𝗕𝗘𝗘𝗡 𝗖𝗢𝗠𝗣𝗟𝗘𝗧𝗘𝗗 ✅\n𝗕𝗢𝗧 𝗕𝗬 ➜ @kzee_mm')
 @bot.callback_query_handler(func=lambda call: call.data == 'stop')
 def menu_callback(call):
 	with open("stop.stop", "w") as file:
