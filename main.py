@@ -5,16 +5,16 @@ from gatet import Tele
 import os
 token = '7428928509:AAHbsywSZzhnbuxysucsnR_cjcRRujZBrTw'
 bot=telebot.TeleBot(token,parse_mode="HTML")
-subscriber = '7428928509'
+subscriber = '6171911240'
 @bot.message_handler(commands=["start"])
 def start(message):
-	if not str(message.chat.id) == '7428928509':
+	if not str(message.chat.id) == '6171911240':
 		bot.reply_to(message, "You cannot use the bot to contact developers to purchase a bot subscription @kzee_mm")
 		return
 	bot.reply_to(message,"Send the file now")
 @bot.message_handler(content_types=["document"])
 def main(message):
-	if not str(message.chat.id) == '7428928509':
+	if not str(message.chat.id) == '6171911240':
 		bot.reply_to(message, "You cannot use the bot to contact developers to purchase a bot subscription @kzee_mm")
 		return
 	dd = 0
